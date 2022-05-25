@@ -105,6 +105,17 @@
                             </a>
                         </li>
                         <!-- Users end -->
+
+                        <!-- Products Start -->
+                        <li class="nav-item">
+                            <a href="{{ route('admin.products.index')}}" class="nav-link {{request()->routeIs('admin.products.*') ? 'active' :'' }}">
+                                <i class="nav-icon fas fa-users"></i>
+                                <p>
+                                    Products
+                                </p>
+                            </a>
+                        </li>
+                        <!-- Products end -->
                   
                     </ul>
                 </nav>

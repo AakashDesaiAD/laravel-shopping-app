@@ -25,8 +25,9 @@ Route::middleware('is_admin')->group(static function () {
 	Route::group(['as'=>'admin.', 'prefix'=>'admin', 'namespace'=> 'admin' ], function()
 	{
 	    Route::resource('users', '\App\Http\Controllers\Admin\UserController');
+	    Route::resource('products', '\App\Http\Controllers\Admin\ProductController');
 	});
 });
 
 Route::get('/category/{id}', ['App\Http\Controllers\ProductController', 'show'])->name('category');
-Route::get('/producs/{id}', ['App\Http\Controllers\ProductController', 'productView'])->name('product');
+Route::get('/products/{id}', ['App\Http\Controllers\ProductController', 'productView'])->name('product');
