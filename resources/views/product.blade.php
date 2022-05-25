@@ -10,7 +10,7 @@
                   <div class="col-md-8 col-lg-6 col-xl-4">
                     <div class="card text-black">
                       <i class="fab fa-apple fa-lg pt-3 pb-1 px-3"></i>
-                      <img src="{{$product->image_1}}"
+                      <img src="/storage/{{$product->image_1}}"
                         class="card-img-top mx-auto" alt="Apple Computer" style="width:100px" />
                       <div class="card-body">
                         <div class="text-center">
