@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
   
 use Illuminate\Http\Request;
 use App\Models\Category;
-   
+use App\Models\Product;
+use Illuminate\Support\Facades\DB;
+
 class HomeController extends Controller
 {
     /**
@@ -24,7 +26,9 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $category = DB::table('categories')->where('is_child', false)->get();
+        $products = Product::all()->toArray();
+        return view('home', ['products' => $products, 'category' => $category]);
     }
   
     /**
