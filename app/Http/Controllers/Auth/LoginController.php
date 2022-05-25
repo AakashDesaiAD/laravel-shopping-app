@@ -47,7 +47,7 @@ class LoginController extends Controller
             'password' => 'required',
         ]);
    
-        if(auth()->attempt(array('email' => $input['email'], 'password' => $input['password'])))
+        if(auth()->attempt(array('email' => $input['email'], 'password' => $input['password'], 'is_active' => true)))
         {
             if (auth()->user()->is_admin == 1) {
                 return redirect()->route('admin.home');
@@ -56,7 +56,7 @@ class LoginController extends Controller
             }
         }else{
             return redirect()->route('login')
-                ->with('error','Email-Address And Password Are Wrong.');
+                ->with('error','You entered wrong credentials or may be your account is not active.');
         }
           
     }
