@@ -20,3 +20,10 @@ Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('ho
 Route::get('admin/home', [App\Http\Controllers\HomeController::class, 'adminHome'])->name('admin.home')->middleware('is_admin');
 
 Route::get('admin', [App\Http\Controllers\Admin\HomeController::class, 'index'])->name('admin')->middleware('is_admin');
+
+Route::middleware('is_admin')->group(static function () {
+	Route::group(['as'=>'admin.', 'prefix'=>'admin', 'namespace'=> 'admin' ], function()
+	{
+	    Route::resource('users', '\App\Http\Controllers\Admin\UserController');
+	});
+});

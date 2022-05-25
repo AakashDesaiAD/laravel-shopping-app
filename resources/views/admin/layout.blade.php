@@ -97,7 +97,7 @@
 
                         <!-- Users Start -->
                         <li class="nav-item">
-                            <a href="users.html" class="nav-link">
+                            <a href="{{ route('admin.users.index')}}" class="nav-link {{request()->routeIs('admin.users.*') ? 'active' :'' }}">
                                 <i class="nav-icon fas fa-users"></i>
                                 <p>
                                     Users
@@ -105,40 +105,7 @@
                             </a>
                         </li>
                         <!-- Users end -->
-
-                        <!-- Products start -->
-                        <li class="nav-item">
-                            <a href="products.html" class="nav-link">
-                                <i class="nav-icon fas fa-briefcase"></i>
-                                <p>
-                                    Products
-                                </p>
-                            </a>
-                        </li>
-                        <!-- Products end -->
-
-                        <!-- Category Start -->
-                        <li class="nav-item">
-                            <a href="category.html" class="nav-link">
-                                <i class="nav-icon fab fa-buffer"></i>
-                                <p>
-                                    Category
-                                </p>
-                            </a>
-                        </li>
-                        <!-- Category end -->
-
-
-                        <!-- Sub Category Start -->
-                        <li class="nav-item">
-                            <a href="subcategory.html" class="nav-link">
-                                <i class="nav-icon fab fa-buffer"></i>
-                                <p>
-                                    Sub Category
-                                </p>
-                            </a>
-                        </li>
-                        <!-- Sub Category end -->
+                  
                     </ul>
                 </nav>
                 <!-- /.sidebar-menu -->
